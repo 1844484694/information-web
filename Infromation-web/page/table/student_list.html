@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="renderer" content="webkit">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	    <link rel="stylesheet" href="../../lib/layui-v2.6.3/css/layui.css" media="all">
+	    <link rel="stylesheet" href="../../css/public.css" media="all">
+	    <script type="text/javascript" src="../../js/bootstrap-3.3.7-dist/js/jquery.js"></script>
+		<script type="text/javascript" src="../../js/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+		<link rel="stylesheet"  href="../../js/bootstrap-3.3.7-dist/css/bootstrap.css"/>
+		<script type="text/javascript" src="../../js/AjaxPost.js"></script>
+		<script type="text/javascript" src="../../js/student.js"></script>
+		<!-- 引入 echarts.js -->
+		<script src="../../layui/layui.js"></script>
+	</head>
+	<body>
+		
+		
+<!--		<div class="col-sm-4" ></div>
+		<div class="col-sm-4" >
+                <div class="page-header " >
+                    <div class="page-title">
+					   <br>
+						<div id="example_filter"  class="dataTables_filter ">
+						<input class="form-control"  id="name" placeholder="条件查询">
+						<br>
+						<button style="width: 100%;" class="btn btn-success btn-block" type="button" onclick="search2()" > 条件查询 </button>
+						 <br>
+						  <br>
+						</div>
+                    </div>
+                </div>
+            </div>-->
+		
+						<div class="layuimini-container">
+    <div class="layuimini-main">
+
+
+		        <fieldset class="table-search-fieldset">
+            <legend>搜索信息</legend>
+            <div style="margin: 10px 10px 10px 10px">
+                <form class="layui-form layui-form-pane" action="">
+                    <div class="layui-form-item">
+                        
+                        <div class="layui-inline">
+                            <label class="layui-form-label">学生姓名</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="uname1" id="uname1" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">学生学号</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="unumber" id="unumber" class="layui-input">
+                            </div>
+                        </div>
+                       
+                        <div class="layui-inline">
+                            <button  type="button" class="layui-btn layui-btn-primary"  lay-submit lay-filter="data-search-btn" onclick="search()"><i class="layui-icon" "></i> 搜 索</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </fieldset>
+		<div style="margin:auto 200px ;">
+			<tr>
+				<table border="2px" class="layui-table" width="100%">
+			<thead>
+					<td>序号</td>
+					<td>学生姓名</td>
+					<td>学生性别</td>
+					<td>出生日期</td>
+					<td>学号</td>
+					<td>密码</td>
+					<td>学校</td>
+					<td>所在系</td>
+					<td>班级名称</td>
+					<td width="20%">操作
+
+					</td>
+					
+				</tr>
+			</thead>
+		</div>
+		<tbody id="tbody">
+
+			
+			</tbody>
+			
+					<!--修改框-->
+		<div class="modal fade" id="modify" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">修改信息</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<input type="text" id="uid" hidden="hidden">
+						
+						<div class="form-group">
+							<label class="control-label" >学生姓名：</label>
+							<input type="text" class="form-control" id="uname" placeholder="">
+						</div>
+						<div class="row form-group">
+						    <div class="col col-md-2"><label for="select" class=" form-control-label">性别</label></div>
+						    <div class="col-12 col-md-4">
+						        <select name="sex" id="sex" class="form-control">
+							          <option value="男">男</option>
+							          <option value="女">女</option>
+						        </select>
+						    </div>
+						</div>
+						<div class="form-group">
+							<label class="control-label" >出生日期：</label>
+							<input type="text" class="form-control" id="birth" placeholder="">
+						</div>
+						<div class="form-group">
+							<label class="control-label" >学号：</label>
+							<input type="text" class="form-control" id="unumber" placeholder="">
+						</div>
+						<div class="form-group">
+							<label class="control-label" >密码：</label>
+							<input type="text" class="form-control" id="password" placeholder="">
+						</div>
+						<div class="form-group">
+							<label class="control-label" >学校：</label>
+							<input type="text" class="form-control" id="school" placeholder="">
+						</div>
+						
+						<div class="row form-group">
+						    <div class="col col-md-2"><label for="select" class=" form-control-label">系名称</label></div>
+						    <div class="col-12 col-md-4">
+						        <select name="departname" id="departname" class="form-control">
+							          <option value="软件技术系">软件技术系</option>
+							          <option value="软件工程系">软件工程系</option>
+							          <option value="互联网商务系">互联网商务系</option>
+						        </select>
+						    </div>
+						</div>
+						
+						<div class="row form-group">
+						    <div class="col col-md-2"><label for="select" class=" form-control-label">系名称</label></div>
+						    <div class="col-12 col-md-4">
+						        <select name="cname" id="cname" class="form-control">
+							          <option value="JAVA-01">JAVA-01</option>
+							          <option value="JAVA-02">JAVA-02</option>
+							          <option value="JAVA-03">JAVA-03</option>
+						        </select>
+						    </div>
+						</div>
+						
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button type="button" class="btn btn-primary" onclick="editStudent()">提交</button>
+					</div>
+				</div>
+			</div>
+			
+			</table>
+		</div>
+		<div class="col-sm-6" ></div>
+								<div class="col-sm-4" >
+								<!-- 分页器 -->
+								<div id="example_filter" class="">
+										<div id="pageDemo"></div>
+								</div>
+							</div>
+		
+	</body>
+</html>
