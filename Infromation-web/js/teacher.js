@@ -16,7 +16,6 @@ $(function() {
 		
 			for( var i = 0 ;i < data.length ;i++)
 			{
-				
 				var id = "'"+data[i].tid+"'"
 				var row = '<tr>' +
 				'<th scope="row">' + (i+1) + '</th>' +
@@ -29,12 +28,9 @@ $(function() {
 				'<td><button class="layui-btn layui-btn-sm" type="submit" onclick="edit('+tid+')" >更改</button>'+
 				'<button class="layui-btn layui-btn-sm layui-btn-danger" type="submit" onclick="remove('+tid+')" >删除</button></td></tr>'
 				dataRow += row;
-				
 			}
 			$("tbody").append(dataRow)
-			
 		})
-	
 }
  	
 /**
@@ -86,7 +82,6 @@ function search()
 					'<td><button class="layui-btn layui-btn-sm" type="submit" onclick="edit('+tid+')" >更改</button>'+
 					'<button class="layui-btn layui-btn-sm layui-btn-danger" type="submit" onclick="remove('+tid+')" >删除</button></td></tr>'
 					dataRow += row;
-						
 				}
 			$("tbody").append(dataRow);
 	})
