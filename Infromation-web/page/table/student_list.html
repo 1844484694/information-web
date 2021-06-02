@@ -47,11 +47,14 @@
                     <div class="layui-form-item">
                         
                         <div class="layui-inline">
+							
                             <label class="layui-form-label">学生姓名</label>
+							
                             <div class="layui-input-inline">
                                 <input type="text" name="uname1" id="uname1" class="layui-input">
                             </div>
                         </div>
+						
                         <div class="layui-inline">
                             <label class="layui-form-label">学生学号</label>
                             <div class="layui-input-inline">
@@ -67,6 +70,8 @@
             </div>
         </fieldset>
 		<div style="margin:auto 200px ;">
+		
+
 			<tr>
 				<table border="2px" class="layui-table" width="100%">
 			<thead>
@@ -80,7 +85,7 @@
 					<td>所在系</td>
 					<td>班级名称</td>
 					<td width="20%">操作
-
+					<button type="button" class="layui-btn" onclick="exportExcel()">导出excel</button>
 					</td>
 					
 				</tr>

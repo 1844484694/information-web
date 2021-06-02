@@ -246,3 +246,23 @@ function pagezz(){
 	 		});
 	 	})
 	 }
+	 
+	 
+	 // 导出excel
+	 
+	 
+function exportExcel() {
+			//alert("开始")
+			$.ajax({
+				type: "POST",
+				url: "http://localhost:8080/student/excel",
+				success: function(data) {
+					//alert("导出成功")
+					window.location.href = encodeURI("http://localhost:8080/student/excel");
+				},
+				//请求失败，包含具体的错误信息
+				error: function(e) {
+					//alert("导出异常")
+				}
+			});
+		}

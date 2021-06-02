@@ -13,8 +13,9 @@ var queryOneApi="/student/queryOne"
 var editApi="/student/update";						//修改信息
 var queryNameApi="/student/querybyname";			//条件查询
 var countApi="/student/getLogsCount";				//查询记录数
+var excelApi="/student/excel";					//excel导出
 //var UserqueryApi="/Goods/queryName";			//多条件查询
-/*var excelApi="/Goods/excelDownload";			//excel导出
+/*
 var queryDepotApi ="/Goods/queryDepot";//下拉框查询
 var queryNumApi="/Goods/queryNum";				//E-charts*/
 
