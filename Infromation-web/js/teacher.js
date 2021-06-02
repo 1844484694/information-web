@@ -16,7 +16,7 @@ $(function() {
 		
 			for( var i = 0 ;i < data.length ;i++)
 			{
-				var id = "'"+data[i].tid+"'"
+				var tid = "'"+data[i].tid+"'"
 				var row = '<tr>' +
 				'<th scope="row">' + (i+1) + '</th>' +
 				'<td >' + data[i].tname + '</td>' +
@@ -70,7 +70,7 @@ function search()
 			dataRow =""
 				for( var i = 0;i<data.length ;i++)
 				{
-					var id = "'"+data[i].tid+"'"
+					var tid = "'"+data[i].tid+"'"
 					var row = '<tr>' +
 					'<th scope="row">' + (i+1) + '</th>' +
 					'<td >' + data[i].tname + '</td>' +
@@ -86,4 +86,70 @@ function search()
 			$("tbody").append(dataRow);
 	})
 	}
+}
+
+/**
+ * 修改前查询单条，喷到页面里
+ * @param {Object} id
+ */
+function edit(tid)
+{
+
+	$('#modify1').modal('show');
+	mypost(queryOneT,
+		{
+			"tid": tid,
+		},
+		function(data) {
+			console.log(data)
+			var tname = data.tname;
+			var sex = data.sex;
+			var birth = data.birth;
+			var tnumber = data.tnumber;
+			var password = data.password;
+			var school = data.school;
+			
+			$("#tid").val(tid);
+			$("#tname1").val(tname);
+			$("#sex").val(sex);
+			$("#birth").val(birth);
+			$("#tnumber").val(tnumber);
+			$("#password").val(password);
+			$("#school").val(school);
+			
+			
+		})
+	
+}
+
+/**
+ *  修改数据
+ */
+function editTeacher(){
+	
+	var tid=$("#tid").val();
+	var tname  = $("#tname1").val();
+	var sex  = $("#sex").val();
+	var birth = $("#birth").val();
+	var tnumber =  $("#tnumber").val();
+	var password = $("#password").val();
+	var school = $("#school").val();
+	mypost(updateT, 
+	{
+		"tid":tid,
+		"tname":tname,
+		"sex":sex,
+		"birth":birth,
+		"tnumber":tnumber,
+		"password":password,
+		"school":school
+	}, 
+	function(data) 
+	{
+				alert("修改成功")
+				$('#modify1').modal('hide');
+				$("tbody").empty()
+				getPage()
+//				pagezz()
+	})
 }

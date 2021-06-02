@@ -146,7 +146,7 @@ function editStudent(){
 function search()
 {
 	$("tbody").empty()
-	if (($("#uname1").val().length == 0)&&($("#unumber").val().length == 0)) {
+	if (($("#uname1").val().length == 0)&&($("#unumber1").val().length == 0)) {
 		pagezz()
 	}else{
 	mypost(queryNameApi,{

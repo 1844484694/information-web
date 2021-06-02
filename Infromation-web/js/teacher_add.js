@@ -15,7 +15,7 @@ $(function() {
 	
 	mypost(addT, 
 	{
-		"uname":uname,
+		"tname":tname,
 		"sex":sex,
 		"birth":birth,
 		"tnumber":tnumber,
@@ -26,7 +26,7 @@ $(function() {
 	{
 		
 				alert("添加成功")
-				window.location.href='student_list.html';
+				window.location.href='teacher_list.html';
 			
 	})
 

@@ -15,6 +15,7 @@
 		<script type="text/javascript" src="../../js/teacher.js"></script>
 		<!-- 引入 echarts.js -->
 		<script src="../../layui/layui.js"></script>
+		<script src="../../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
 	</head>
 	<body>
 		
@@ -83,7 +84,7 @@
 			</tbody>
 			
 					<!--修改框-->
-		<div class="modal fade" id="modify" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal fade" id="modify1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -96,65 +97,53 @@
 						<input type="text" id="tid" hidden="hidden">
 						
 						<div class="form-group">
-							<label class="control-label" >学生姓名：</label>
-							<input type="text" class="form-control" id="tname" placeholder="">
+							<label class="control-label" >教师姓名：</label>
+							<input type="text" class="form-control" id="tname1" placeholder="">
 						</div>
-						<div class="form-group">
-							<label class="control-label" >学生性别：</label>
-							<input type="text" class="form-control" id="age" placeholder="">
+						<div class="row form-group">
+						    <div class="col col-md-2"><label for="select" class=" form-control-label">性别</label></div>
+						    <div class="col-12 col-md-4">
+						        <select name="sex" id="sex" class="form-control">
+							          <option value="男">男</option>
+							          <option value="女">女</option>
+						        </select>
+						    </div>
 						</div>
 						<div class="form-group">
 							<label class="control-label" >出生日期：</label>
-							<input type="text" class="form-control" id="tel" placeholder="">
+							<input type="text" class="form-control" id="birth" placeholder="">
 						</div>
 						<div class="form-group">
-							<label class="control-label" >学号：</label>
-							<input type="text" class="form-control" id="uuid" placeholder="">
+							<label class="control-label" >教师工号：</label>
+							<input type="text" class="form-control" id="tnumber" placeholder="">
 						</div>
 						<div class="form-group">
 							<label class="control-label" >密码：</label>
-							<input type="text" class="form-control" id="uuid" placeholder="">
+							<input type="text" class="form-control" id="password" placeholder="">
 						</div>
 						<div class="form-group">
 							<label class="control-label" >学校：</label>
-							<input type="text" class="form-control" id="uuid" placeholder="">
+							<input type="text" class="form-control" id="school" placeholder="">
 						</div>
 						
-						<div class="form-group">
-							<label class="control-label" >部门名称：</label>
-							<input type="text" class="form-control" id="uuid" placeholder="">
-						</div><div class="form-group">
-							<label class="control-label" >班级名称：</label>
-							<input type="text" class="form-control" id="uuid" placeholder="">
-						</div>
-						<div class="row form-group">
-						    <div class="col col-md-2"><label for="select" class=" form-control-label">商品状态</label></div>
-						    <div class="col-12 col-md-4">
-						        <select name="id" id="id" class="form-control">
-							          <option value="1001">自行车</option>
-							          <option value="1002">汽车</option>
-						        </select>
-						    </div>
-						    
-						</div>
 						
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-						<button type="button" class="btn btn-primary" onclick="editPerson()">提交</button>
+						<button type="button" class="btn btn-primary" onclick="editTeacher()">提交</button>
 					</div>
 				</div>
 			</div>
 			
 			</table>
 		</div>
-		<div class="col-sm-6" ></div>
+		<!--<div class="col-sm-6" ></div>
 								<div class="col-sm-4" >
 								<!-- 分页器 -->
-								<div id="example_filter" class="">
+								<!--<div id="example_filter" class="">
 										<div id="pageDemo"></div>
 								</div>
-							</div>
-		
+							</div>-->
+		-->
 	</body>
 </html>
