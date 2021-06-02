@@ -24,6 +24,7 @@
         <label class="layui-form-label required">学生姓名</label>
         <div class="layui-input-block">
             <input type="text" id="uname" placeholder="请输入学生姓名" value="" class="layui-input">
+        	<tip>填写学生名称。</tip>
         </div>
     </div>
     <div class="layui-form-item">
@@ -34,7 +35,7 @@
         </div>
     </div>
     <div class="layui-form-item">
-        <label class="layui-form-label">生日</label>
+        <label class="layui-form-label">出生日期</label>
             <div class="layui-input-inline">
                  <input type="text" name="birth" id="birth" lay-verify="birth" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
             </div>
@@ -75,7 +76,8 @@
         <select name="departname" lay-verify="required" lay-search="" id="departname">
           <option value="">直接选择</option>
           <option value="软件技术系">软件技术系</option>
-          <option value="软件技术系01">软件技术系01</option>
+          <option value="软件工程系">软件工程系</option>
+          <option value="互联网商务系">互联网商务系</option>
         </select>
       </div>
     </div>
@@ -84,6 +86,13 @@
             <button class="layui-btn layui-btn-normal" onclick="addStudent()">确认保存</button>
         </div>
     </div>
+    <div style="color: #666;margin-top: 30px;margin-bottom: 40px;padding-left: 30px;"><br>
+                        <h3>说明</h3><br>
+                        <h4>添加学生</h4>
+                        <p>管理员可进行添加学生信息操作</p>
+                        <br><h4>跳转</h4>
+                        <p>填完信息点击保存成功后可跳转到学生展示页</p>
+                    </div>
 </div>
 <script src="../../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
 <script>
