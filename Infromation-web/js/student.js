@@ -151,7 +151,7 @@ function search()
 	}else{
 	mypost(queryNameApi,{
 		uname:$("#uname1").val(),
-		unumber:$("#unumber").val()
+		unumber:$("#unumber1").val()
 		},function(data){
 			dataRow =""
 				for( var i = 0;i<data.length ;i++)
