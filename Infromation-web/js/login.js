@@ -1,10 +1,10 @@
 function loginin()
 {
-	var username = $("#username").val();
+	var rname = $("#rname").val();
 	var password = $("#password").val();
 	var message = $("#message").val();
 	mypost(loginApi, {
-		"username":username,
+		"rname":rname,
 		"password":password,
 		"message":message
 		}, 
@@ -22,12 +22,13 @@ function loginin()
 	
 }
 function keys(){
+	var rname = $("#rname").val();
+	//alert(rname)
 	mypost(keysApi,{
-		
+		"rname":rname,
 	},
 	function(data){
 		
-		alert(data.text)
 		
 	}
 	

@@ -19,8 +19,8 @@ var excelApi="/student/excel";					//excel导出
 var queryDepotApi ="/Goods/queryDepot";//下拉框查询
 var queryNumApi="/Goods/queryNum";				//E-charts*/
 
-//var keysApi="/Manage/key";				//发送验证码
-//var loginApi="/Manage/login";				//登录
+var keysApi="/root/sendCode";					//发送验证码
+var loginApi="/root/login";				//登录
 
 /**
  * 教师展示的api
