@@ -51,12 +51,11 @@
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-username" for="username"></label>
-                    <input type="text" id="rname" name="rname" lay-verify="required|account" placeholder="用户名或者邮箱" autocomplete="off" class="layui-input" value="admin">
+                    <input type="text" id="rname" name="rname" lay-verify="required|account" placeholder="用户名" autocomplete="off" class="layui-input" value="admin">
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-password" for="password"></label>
                     <input type="password" id="password" name="password" lay-verify="required|password" placeholder="密码" autocomplete="off" class="layui-input" value="123">
-                    <link rel="stylesheet" href="../../lib/layui-v2.6.3/css/layui.css" media="all">
                 </div>
                 <div class="layui-form-item" >
                     <label class="layui-form-label" for="message"></label>
@@ -80,9 +79,10 @@
     </div>
 </div>
 <script src="lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
-<script src="lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
 <script src="lib/jq-module/jquery.particleground.min.js" charset="utf-8"></script>
 <script>
+	
+  
     layui.use(['form'], function () {
         var form = layui.form,
             layer = layui.layer;
@@ -113,7 +113,8 @@
                 layer.msg('验证码不能为空');
                 return false;
             }
-          loginin();
+            
+            loginin();
             return false;
 //          if (data.msc == 200) {
 //          	alert("登陆成功")
@@ -123,8 +124,16 @@
 //				alert("登陆失败")
 //
 //				}
+
+		var DISABLED = 'layui-btn-disabled';
+
+         $(':button').addClass(DISABLED); // 添加样式
+
+         $(':button').attr('disabled', 'disabled');  // 添加属性
         });
     });
+    
+    
     
     layui.use('layer', function () { //独立版的layer无需执行这一句
         var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
