@@ -59,7 +59,7 @@ function remove(uid)
 			
 				alert("删除成功")
 				$("tbody").empty()
-				getPage()
+				pagezz()
 			
 		})
 }
